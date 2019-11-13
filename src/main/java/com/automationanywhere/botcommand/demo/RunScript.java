@@ -21,6 +21,8 @@ import com.automationanywhere.commandsdk.i18n.MessagesFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.automationanywhere.commandsdk.model.AttributeType.TEXT;
 import static com.automationanywhere.commandsdk.model.DataType.STRING;
@@ -40,15 +42,18 @@ public class RunScript {
 
 	@Execute
 	public StringValue action(
-			@Idx(index = "1", type = TEXT) @Pkg(label = "Script Path") @NotEmpty String ScriptPath
+			@Idx(index = "1", type = TEXT) @Pkg(label = "Script Path") @NotEmpty String ScriptPath,
+			@Idx(index = "2", type = TEXT) @Pkg(label = "parameter") @NotEmpty String ScriptParameter
 	) {
 
 		if ("".equals(ScriptPath.trim()))
 			throw new BotCommandException(MESSAGES.getString("emptyInputString", "scriptPath"));
 
 		String OUTPUT = "";
-
-		ProcessBuilder processBuilder = new ProcessBuilder(ScriptPath);
+		List<String> list = new ArrayList<String>();
+		list.add(ScriptPath);
+		list.add(ScriptParameter);
+		ProcessBuilder processBuilder = new ProcessBuilder(list);
 
 
 		try {
