@@ -1,0 +1,10 @@
+{
+  "name": "Run Scripts",
+  "label": "Run Scripts",
+  "description": "Run scripts Synchronously and catch output.",
+  "group": "",
+  "artifactName": "",
+  "packageVersion": "",
+  "codeVersion": "",
+  "commands": []
+}
