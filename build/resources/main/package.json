@@ -1,0 +1,45 @@
+{
+    "name": "Run Scripts",
+    "label": "Run Scripts",
+    "description": "Run scripts Synchronously and catch output.",
+    "group": "com.automationanywhere",
+    "artifactName": "RunSyncScriptsPackage",
+    "packageVersion": "1.0.0-20191113-024009",
+    "codeVersion": "1.0.0-20191113-024009",
+    "commands": [
+        {
+            "name": "Run Script",
+            "label": "Run Script",
+            "description": "Run Script Synchronously",
+            "nodeLabel": "Run Script {{scriptPath}}",
+            "mainClass": "com.automationanywhere.botcommand.demo.RunScriptCommand",
+            "icon": "pkg.svg",
+            "returnType": "STRING",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "Assign the output to variable",
+            "returnRequired": false,
+            "attributes": [
+                {
+                    "name": "ScriptPath",
+                    "label": "Script Path",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "ScriptParameter",
+                    "label": "parameter",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
